@@ -13,8 +13,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Redirect to Beehiiv native subscribe if JS enabled -->
-  <script>window.location.href='https://bhi-jasontheseoguy-newsletter.beehiiv.com/?modal=signup&utm_source=rocdigest&utm_medium=website';</script>
-  <meta http-equiv="refresh" content="1;url=https://bhi-jasontheseoguy-newsletter.beehiiv.com/?modal=signup">
   <style>
     :root { --navy: #1a3a5c; --gold: #e8b931; --text-muted: #5a6577; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,6 +24,7 @@
     .subscribe-page .subtitle strong { color: var(--navy); }
     .subscribe-page .trust { font-size: 13px; color: var(--text-muted); margin-top: 20px; }
     @media (max-width: 480px) { .subscribe-page h1 { font-size: 26px; } .subscribe-page img { height: 80px; } }
+  iframe[src*="subscribe-forms.beehiiv.com"]{width:400px !important;max-width:100% !important;margin:0 auto !important;display:block !important}
   </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9C987FXWJ"></script>
@@ -65,23 +64,9 @@ src="https://www.facebook.com/tr?id=808491268352878&amp;ev=PageView&amp;noscript
     <img src="/images/rocdigestwhitetagline.png" alt="The ROC Digest">
     <h1>Rochester's Free Insider Newsletter</h1>
     <p class="subtitle"><strong>Events. Restaurants. Hidden gems. Things to do.</strong><br>Delivered free, 3x a week. Built by someone who's lived here.</p>
-    <div style="max-width:420px;margin:0 auto;">
-      <form id="subscribe-form" style="display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid #dde2e8;">
-        <input type="email" id="sub-email" placeholder="Enter your email" required style="flex:1;padding:14px 16px;border:none;font-size:16px;font-family:var(--font);outline:none;">
-        <button type="submit" style="background:#e8b931;color:#1a3a5c;border:none;padding:14px 28px;font-size:16px;font-weight:700;font-family:var(--font);cursor:pointer;">Subscribe</button>
-      </form>
-      <p id="sub-msg" style="margin-top:12px;font-size:14px;display:none;"></p>
+    <div id="sub-form" style="max-width:420px;margin:0 auto;">
+      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="fdc4ab16-7e85-4c5e-8dea-658a3f2d7c5c"></script>
     </div>
-    <script>
-    document.getElementById('subscribe-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var email = document.getElementById('sub-email').value;
-      if (email) {
-        // Redirect to Beehiiv native subscribe with email pre-filled
-        window.location.href = 'https://bhi-jasontheseoguy-newsletter.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
-      }
-    });
-    </script>
     <p class="trust">Free. No spam. Unsubscribe anytime.</p>
   </div>
 </body>
