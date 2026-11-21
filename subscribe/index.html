@@ -25,6 +25,12 @@
     .subscribe-page .trust { font-size: 13px; color: var(--text-muted); margin-top: 20px; }
     @media (max-width: 480px) { .subscribe-page h1 { font-size: 26px; } .subscribe-page img { height: 80px; } }
   iframe[src*="subscribe-forms.beehiiv.com"]{width:400px !important;max-width:100% !important;margin:0 auto !important;display:block !important}
+  .sched{margin:32px auto 0;max-width:400px;text-align:left;border-top:1px solid #e5e9ef;padding-top:24px}
+  .sched-h{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:14px;text-align:center}
+  .sched-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;font-size:15px;color:var(--text-muted);line-height:1.45}
+  .sched-row span{flex:0 0 48px;background:var(--navy);color:var(--gold);font-weight:800;font-size:13px;text-align:center;padding:6px 0;border-radius:6px}
+  .sched-row strong{color:var(--navy)}
+  .sched-f{font-size:13px;color:var(--text-muted);text-align:center;margin-top:6px}
   </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9C987FXWJ"></script>
@@ -39,6 +45,7 @@
     var d = e.data || {};
     if (d.type === 'beehiiv:submitted') {
       gtag('event', 'sign_up', { method: 'beehiiv_newsletter', page_path: location.pathname });
+      if (location.pathname.indexOf('/welcome') !== 0) { setTimeout(function(){ window.location.href = '/welcome/'; }, 400); }
     }
   });
 </script>
@@ -63,11 +70,18 @@ src="https://www.facebook.com/tr?id=808491268352878&amp;ev=PageView&amp;noscript
   <div class="subscribe-page">
     <img src="/images/rocdigestwhitetagline.png" alt="The ROC Digest">
     <h1>Rochester's Free Insider Newsletter</h1>
-    <p class="subtitle"><strong>Events. Restaurants. Hidden gems. Things to do.</strong><br>Delivered free, 3x a week. Built by someone who's lived here.</p>
+    <p class="subtitle"><strong>Events. Restaurants. Hidden gems. Things to do.</strong><br>Free, 3 mornings a week. Sign up and get the <strong>free Rochester Activities Guide</strong> in your inbox right away.</p>
     <div id="sub-form" style="max-width:420px;margin:0 auto;">
       <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="fdc4ab16-7e85-4c5e-8dea-658a3f2d7c5c"></script>
     </div>
     <p class="trust">Free. No spam. Unsubscribe anytime.</p>
+    <div class="sched">
+      <p class="sched-h">What lands in your inbox</p>
+      <div class="sched-row"><span>Mon</span><div><strong>The Week Ahead</strong><br>Everything worth doing in Rochester this week.</div></div>
+      <div class="sched-row"><span>Wed</span><div><strong>Midweek Mix</strong><br>New restaurants, local news and reader questions answered.</div></div>
+      <div class="sched-row"><span>Fri</span><div><strong>Weekend Guide</strong><br>The best things to do Friday through Sunday.</div></div>
+      <p class="sched-f">8 AM, 5-minute read. No politics, no crime.</p>
+    </div>
   </div>
 </body>
 </html>
