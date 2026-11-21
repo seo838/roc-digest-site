@@ -220,5 +220,25 @@ src="https://www.facebook.com/tr?id=808491268352878&amp;ev=PageView&amp;noscript
   <div class="footer-bottom"><span>&copy; 2026 The ROC Digest. All rights reserved.</span><span>Rochester, NY</span></div>
 </footer>
 
+<!-- ROC slide-in signup -->
+<div id="roc-slide" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:520px;margin:0 auto;background:#1a3a5c;color:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.25);padding:16px 44px 16px 18px;font-family:Inter,system-ui,sans-serif">
+  <button id="roc-slide-x" aria-label="Close" style="position:absolute;top:8px;right:10px;background:none;border:0;color:#fff;font-size:22px;cursor:pointer;line-height:1">&times;</button>
+  <div style="font-weight:800;font-size:16px;margin-bottom:4px">Never miss what's happening in Rochester</div>
+  <div style="font-size:14px;opacity:.9;margin-bottom:10px">Events, holiday lights, new restaurants. Free, Mon/Wed/Fri at 8 AM.</div>
+  <a href="/subscribe/?utm_source=rocdigest&utm_medium=slidein" style="display:inline-block;background:#e8b931;color:#1a3a5c;font-weight:800;text-decoration:none;padding:10px 18px;border-radius:8px;font-size:15px">Get it free</a>
+</div>
+<script>
+(function(){
+  try{
+    if (/bhv_[^=]*_subscribed=/.test(document.cookie)) return;
+    if (localStorage.getItem('rocSlideClosed') && Date.now()-localStorage.getItem('rocSlideClosed') < 7*864e5) return;
+  }catch(e){}
+  var shown=false, el=document.getElementById('roc-slide');
+  function show(){ if(shown) return; shown=true; el.style.display='block'; if(window.gtag) gtag('event','slidein_shown'); }
+  setTimeout(show, 20000);
+  window.addEventListener('scroll', function(){ if((window.scrollY+innerHeight)/document.body.scrollHeight>0.5) show(); }, {passive:true});
+  document.getElementById('roc-slide-x').onclick=function(){ el.style.display='none'; try{localStorage.setItem('rocSlideClosed',Date.now())}catch(e){} };
+})();
+</script>
 </body>
 </html>
