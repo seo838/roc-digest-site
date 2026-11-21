@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're in! | The ROC Digest</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Subscribe to Rochester's free insider newsletter. Events, restaurants, hidden gems, and things to do — delivered 3x/week.">
+  <meta property="og:title" content="Subscribe to The ROC Digest">
+  <meta property="og:description" content="Rochester's free insider newsletter. Events, restaurants, hidden gems, and things to do — delivered 3x/week.">
+  <meta property="og:image" content="/images/rocbanner.png">
+  <meta property="og:url" content="https://rocdigest.com/welcome/">
+  <link rel="icon" type="image/png" href="/images/rdmonogram.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Redirect to Beehiiv native subscribe if JS enabled -->
+  <style>
+    :root { --navy: #1a3a5c; --gold: #e8b931; --text-muted: #5a6577; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, system-ui, sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #fff; padding: 40px 24px; }
+    .subscribe-page { text-align: center; max-width: 480px; width: 100%; }
+    .subscribe-page img { height: 100px; margin: 0 auto 32px; }
+    .subscribe-page h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 12px; line-height: 1.2; }
+    .subscribe-page .subtitle { font-size: 17px; color: var(--text-muted); margin-bottom: 32px; line-height: 1.6; }
+    .subscribe-page .subtitle strong { color: var(--navy); }
+    .subscribe-page .trust { font-size: 13px; color: var(--text-muted); margin-top: 20px; }
+    @media (max-width: 480px) { .subscribe-page h1 { font-size: 26px; } .subscribe-page img { height: 80px; } }
+  iframe[src*="subscribe-forms.beehiiv.com"]{width:400px !important;max-width:100% !important;margin:0 auto !important;display:block !important}
+  .sched{margin:32px auto 0;max-width:400px;text-align:left;border-top:1px solid #e5e9ef;padding-top:24px}
+  .sched-h{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:14px;text-align:center}
+  .sched-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;font-size:15px;color:var(--text-muted);line-height:1.45}
+  .sched-row span{flex:0 0 48px;background:var(--navy);color:var(--gold);font-weight:800;font-size:13px;text-align:center;padding:6px 0;border-radius:6px}
+  .sched-row strong{color:var(--navy)}
+  .sched-f{font-size:13px;color:var(--text-muted);text-align:center;margin-top:6px}
+  </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9C987FXWJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G9C987FXWJ');
+  gtag('event', 'generate_lead', { method: 'beehiiv_newsletter' });
+  // Newsletter signup: Beehiiv embed posts "beehiiv:submitted" to the parent page
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://subscribe-forms.beehiiv.com') return;
+    var d = e.data || {};
+    if (d.type === 'beehiiv:submitted') {
+      gtag('event', 'sign_up', { method: 'beehiiv_newsletter', page_path: location.pathname });
+      if (location.pathname.indexOf('/welcome') !== 0) { setTimeout(function(){ window.location.href = '/welcome/'; }, 400); }
+    }
+  });
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '808491268352878');
+fbq('track', 'PageView');
+fbq('track', 'Lead', {content_name: 'ROC Digest signup'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=808491268352878&amp;ev=PageView&amp;noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+  <div class="subscribe-page">
+    <img src="/images/rocdigestwhitetagline.png" alt="The ROC Digest">
+    <h1>You're in. Welcome to The ROC Digest.</h1>
+    <p class="subtitle"><strong>Check your inbox in the next couple of minutes</strong> for your free Rochester Activities Guide (subject: "Your Rochester Activities Guide is inside").</p>
+    <p class="trust" style="margin-top:0">Don't see it? Check Promotions or Spam and drag it to your Primary inbox so you don't miss the weekend guide.</p>
+    <div class="sched">
+      <p class="sched-h">What happens next</p>
+      <div class="sched-row"><span>Mon</span><div><strong>The Week Ahead</strong><br>Everything worth doing in Rochester this week.</div></div>
+      <div class="sched-row"><span>Wed</span><div><strong>Midweek Mix</strong><br>New restaurants, local news and reader questions answered.</div></div>
+      <div class="sched-row"><span>Fri</span><div><strong>Weekend Guide</strong><br>The best things to do Friday through Sunday.</div></div>
+      <p class="sched-f">Every one lands at 8 AM and takes 5 minutes to read.</p>
+    </div>
+    <p class="subtitle" style="margin-top:28px;margin-bottom:12px"><strong>Want something to do now?</strong></p>
+    <p style="font-size:15px;line-height:2"><a href="/holiday-events/" style="color:#1a3a5c;font-weight:700">Holiday events 2026</a> &middot; <a href="/christmas-lights/" style="color:#1a3a5c;font-weight:700">Christmas lights</a> &middot; <a href="/this-weekend/" style="color:#1a3a5c;font-weight:700">This weekend</a> &middot; <a href="/best-restaurants/" style="color:#1a3a5c;font-weight:700">Best restaurants</a></p>
+  </div>
+</body>
+</html>
